@@ -6,10 +6,7 @@ using HarmonyLib;
 using HitScoreVisualizer.Helpers;
 using HitScoreVisualizer.Models;
 using HitScoreVisualizer.Services;
-using IPA.Utilities;
 using SiraUtil.Affinity;
-using TMPro;
-using UnityEngine;
 using Zenject;
 
 namespace HitScoreVisualizer.HarmonyPatches
@@ -63,15 +60,21 @@ namespace HitScoreVisualizer.HarmonyPatches
 				var hsvFlyingScoreEffect = gameObject.AddComponent<HsvFlyingScoreEffect>();
 
 				// Serialized fields aren't filled in correctly in our own custom override, so copying over the values using FieldAccessors
+				// Forcefully downcasting source and target instances for FieldAccessors
 				var flyingObjectEffect = (FlyingObjectEffect) flyingScoreEffect;
-				FieldAccessor<FlyingObjectEffect, AnimationCurve>.Set(hsvFlyingScoreEffect, "_moveAnimationCurve", Accessors.MoveAnimationCurveAccessor(ref flyingObjectEffect));
-				FieldAccessor<FlyingObjectEffect, float>.Set(hsvFlyingScoreEffect, "_shakeFrequency", Accessors.ShakeFrequencyAccessor(ref flyingObjectEffect));
-				FieldAccessor<FlyingObjectEffect, float>.Set(hsvFlyingScoreEffect, "_shakeStrength", Accessors.ShakeStrengthAccessor(ref flyingObjectEffect));
-				FieldAccessor<FlyingObjectEffect, AnimationCurve>.Set(hsvFlyingScoreEffect, "_shakeStrengthAnimationCurve", Accessors.ShakeStrengthAnimationCurveAccessor(ref flyingObjectEffect));
+				var hsvFlyingObjectEffect = (FlyingObjectEffect) hsvFlyingScoreEffect;
 
-				FieldAccessor<FlyingScoreEffect, TextMeshPro>.Set(hsvFlyingScoreEffect, "_text", Accessors.TextAccessor(ref flyingScoreEffect));
-				FieldAccessor<FlyingScoreEffect, AnimationCurve>.Set(hsvFlyingScoreEffect, "_fadeAnimationCurve", Accessors.FadeAnimationCurveAccessor(ref flyingScoreEffect));
-				FieldAccessor<FlyingScoreEffect, SpriteRenderer>.Set(hsvFlyingScoreEffect, "_maxCutDistanceScoreIndicator", Accessors.SpriteRendererAccessor(ref flyingScoreEffect));
+				Accessors.MoveAnimationCurveAccessor(ref hsvFlyingObjectEffect) = Accessors.MoveAnimationCurveAccessor(ref flyingObjectEffect);
+				Accessors.ShakeFrequencyAccessor(ref hsvFlyingObjectEffect) = Accessors.ShakeFrequencyAccessor(ref flyingObjectEffect);
+				Accessors.ShakeStrengthAccessor(ref hsvFlyingObjectEffect) = Accessors.ShakeStrengthAccessor(ref flyingObjectEffect);
+				Accessors.ShakeStrengthAnimationCurveAccessor(ref hsvFlyingObjectEffect) = Accessors.ShakeStrengthAnimationCurveAccessor(ref flyingObjectEffect);
+
+				// Forcefully downcasting target instance for FieldAccessors
+				var hsvDownCastedFlyingScoreEffect = (FlyingScoreEffect) hsvFlyingScoreEffect;
+
+				Accessors.TextAccessor(ref hsvDownCastedFlyingScoreEffect) = Accessors.TextAccessor(ref flyingScoreEffect);
+				Accessors.FadeAnimationCurveAccessor(ref hsvDownCastedFlyingScoreEffect) = Accessors.FadeAnimationCurveAccessor(ref flyingScoreEffect);
+				Accessors.SpriteRendererAccessor(ref hsvDownCastedFlyingScoreEffect) = Accessors.SpriteRendererAccessor(ref flyingScoreEffect);
 			}
 
 			// Once the HSV stuff is done, we reconfigure the HSV prefab font.
