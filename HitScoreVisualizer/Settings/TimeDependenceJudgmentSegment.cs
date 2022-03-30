@@ -5,7 +5,7 @@ namespace HitScoreVisualizer.Settings
 	public class TimeDependenceJudgmentSegment
 	{
 		[JsonIgnore]
-		internal static TimeDependenceJudgmentSegment Default { get; } = new TimeDependenceJudgmentSegment { Threshold = 0, Text = string.Empty };
+		internal static TimeDependenceJudgmentSegment Default { get; } = new() { Threshold = 0, Text = string.Empty };
 
 		// This judgment will be applied only when the time dependence >= this number.
 		// If no judgment can be applied, the judgment for this segment will be "" (the empty string).

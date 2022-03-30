@@ -11,7 +11,7 @@ namespace HitScoreVisualizer.Settings
 	public class Configuration
 	{
 		[JsonIgnore]
-		internal static Configuration Default { get; } = new Configuration
+		internal static Configuration Default { get; } = new()
 		{
 			Version = Plugin.Version,
 			IsDefaultConfig = true,
@@ -21,16 +21,16 @@ namespace HitScoreVisualizer.Settings
 			TimeDependenceDecimalOffset = 2,
 			Judgments = new List<Judgment>
 			{
-				new Judgment(threshold: 115, text: "%BFantastic%A%n%s", color: new List<float> { 1.0f, 1.0f, 1.0f, 1.0f }),
-				new Judgment(threshold: 101, text: "<size=80%>%BExcellent%A</size>%n%s", color: new List<float> { 0.0f, 1.0f, 0.0f, 1.0f }),
-				new Judgment(threshold: 90, text: "<size=80%>%BGreat%A</size>%n%s", color: new List<float> { 1.0f, 0.980392158f, 0.0f, 1.0f }),
-				new Judgment(threshold: 80, text: "<size=80%>%BGood%A</size>%n%s", color: new List<float> { 1.0f, 0.6f, 0.0f, 1.0f }, fade: true),
-				new Judgment(threshold: 60, text: "<size=80%>%BDecent%A</size>%n%s", color: new List<float> { 1.0f, 0.0f, 0.0f, 1.0f }, fade: true),
-				new Judgment(text: "<size=80%>%BWay Off%A</size>%n%s", color: new List<float> { 0.5f, 0.0f, 0.0f, 1.0f }, fade: true)
+				new(threshold: 115, text: "%BFantastic%A%n%s", color: new List<float> { 1.0f, 1.0f, 1.0f, 1.0f }),
+				new(threshold: 101, text: "<size=80%>%BExcellent%A</size>%n%s", color: new List<float> { 0.0f, 1.0f, 0.0f, 1.0f }),
+				new(threshold: 90, text: "<size=80%>%BGreat%A</size>%n%s", color: new List<float> { 1.0f, 0.980392158f, 0.0f, 1.0f }),
+				new(threshold: 80, text: "<size=80%>%BGood%A</size>%n%s", color: new List<float> { 1.0f, 0.6f, 0.0f, 1.0f }, fade: true),
+				new(threshold: 60, text: "<size=80%>%BDecent%A</size>%n%s", color: new List<float> { 1.0f, 0.0f, 0.0f, 1.0f }, fade: true),
+				new(text: "<size=80%>%BWay Off%A</size>%n%s", color: new List<float> { 0.5f, 0.0f, 0.0f, 1.0f }, fade: true)
 			},
-			BeforeCutAngleJudgments = new List<JudgmentSegment> { new JudgmentSegment { Threshold = 70, Text = "+" }, new JudgmentSegment { Text = " " } },
-			AccuracyJudgments = new List<JudgmentSegment> { new JudgmentSegment { Threshold = 15, Text = " + " }, new JudgmentSegment { Text = " " } },
-			AfterCutAngleJudgments = new List<JudgmentSegment> { new JudgmentSegment { Threshold = 30, Text = " + " }, new JudgmentSegment { Text = " " } }
+			BeforeCutAngleJudgments = new List<JudgmentSegment> { new() { Threshold = 70, Text = "+" }, new() { Text = " " } },
+			AccuracyJudgments = new List<JudgmentSegment> { new() { Threshold = 15, Text = " + " }, new() { Text = " " } },
+			AfterCutAngleJudgments = new List<JudgmentSegment> { new() { Threshold = 30, Text = " + " }, new() { Text = " " } }
 		};
 
 		// If the version number (excluding patch version) of the config is higher than that of the plugin,
@@ -49,7 +49,7 @@ namespace HitScoreVisualizer.Settings
 		[JsonIgnore]
 		internal Version Version
 		{
-			get => new Version(MajorVersion, MinorVersion, PatchVersion);
+			get => new(MajorVersion, MinorVersion, PatchVersion);
 			set
 			{
 				MajorVersion = value.Major;
@@ -139,7 +139,6 @@ namespace HitScoreVisualizer.Settings
 		// Format specifier: %B
 		[JsonProperty("beforeCutAngleJudgments")]
 		public List<JudgmentSegment>? BeforeCutAngleJudgments { get; internal set; }
-
 
 		// Judgments for the accuracy of the cut (how close to the center of the block the cut was, score is from 0-15).
 		// Format specifier: %C
