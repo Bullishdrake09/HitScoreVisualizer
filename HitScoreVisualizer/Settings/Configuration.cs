@@ -30,7 +30,17 @@ namespace HitScoreVisualizer.Settings
 			},
 			BeforeCutAngleJudgments = new List<JudgmentSegment> { new(70, " + "), new(text: " ") },
 			AccuracyJudgments = new List<JudgmentSegment> { new(15, " + "), new(text: " ") },
-			AfterCutAngleJudgments = new List<JudgmentSegment> { new(30, " + "), new(text: " ") }
+			AfterCutAngleJudgments = new List<JudgmentSegment> { new(30, " + "), new(text: " ") },
+			ChainHeadJudgements = new List<Judgment>
+			{
+				new(85, "%BFantastic%B%n%s", new List<float> { 1f, 1f, 1f, 1f }),
+				new(71, "<size=80%>%BExcellent%B</size>%n%s", new List<float> { 0f, 1f, 0f, 1f }, true),
+				new(60, "<size=80%>%BGreat%B</size>%n%s", new List<float> { 1f, 0.980392158f, 0f, 1f }, true),
+				new(50, "<size=80%>%BGood%B</size>%n%s", new List<float> { 1f, 0.6f, 0f, 1f }, true),
+				new(30, "<size=80%>%BDecent%B</size>%n%s", new List<float> { 1f, 0f, 0f, 1f }, true),
+				new(text: "<size=80%>%BWay Off%B</size>%n%s", color: new List<float> { 0.5f, 0f, 0f, 1f }, fade: true)
+			},
+			ChainLinkDisplay = ChainLinkDisplay.Default
 		};
 
 		// If the version number (excluding patch version) of the config is higher than that of the plugin,
