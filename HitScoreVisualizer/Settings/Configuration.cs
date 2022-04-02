@@ -21,16 +21,16 @@ namespace HitScoreVisualizer.Settings
 			TimeDependenceDecimalOffset = 2,
 			Judgments = new List<Judgment>
 			{
-				new(threshold: 115, text: "%BFantastic%A%n%s", color: new List<float> { 1.0f, 1.0f, 1.0f, 1.0f }),
-				new(threshold: 101, text: "<size=80%>%BExcellent%A</size>%n%s", color: new List<float> { 0.0f, 1.0f, 0.0f, 1.0f }),
-				new(threshold: 90, text: "<size=80%>%BGreat%A</size>%n%s", color: new List<float> { 1.0f, 0.980392158f, 0.0f, 1.0f }),
-				new(threshold: 80, text: "<size=80%>%BGood%A</size>%n%s", color: new List<float> { 1.0f, 0.6f, 0.0f, 1.0f }, fade: true),
-				new(threshold: 60, text: "<size=80%>%BDecent%A</size>%n%s", color: new List<float> { 1.0f, 0.0f, 0.0f, 1.0f }, fade: true),
+				new(115, "%BFantastic%A%n%s", new List<float> { 1.0f, 1.0f, 1.0f, 1.0f }),
+				new(101, "<size=80%>%BExcellent%A</size>%n%s", new List<float> { 0.0f, 1.0f, 0.0f, 1.0f }),
+				new(90, "<size=80%>%BGreat%A</size>%n%s", new List<float> { 1.0f, 0.980392158f, 0.0f, 1.0f }),
+				new(80, "<size=80%>%BGood%A</size>%n%s", new List<float> { 1.0f, 0.6f, 0.0f, 1.0f }, fade: true),
+				new(60, "<size=80%>%BDecent%A</size>%n%s", new List<float> { 1.0f, 0.0f, 0.0f, 1.0f }, fade: true),
 				new(text: "<size=80%>%BWay Off%A</size>%n%s", color: new List<float> { 0.5f, 0.0f, 0.0f, 1.0f }, fade: true)
 			},
-			BeforeCutAngleJudgments = new List<JudgmentSegment> { new() { Threshold = 70, Text = "+" }, new() { Text = " " } },
-			AccuracyJudgments = new List<JudgmentSegment> { new() { Threshold = 15, Text = " + " }, new() { Text = " " } },
-			AfterCutAngleJudgments = new List<JudgmentSegment> { new() { Threshold = 30, Text = " + " }, new() { Text = " " } }
+			BeforeCutAngleJudgments = new List<JudgmentSegment> { new(70, " + "), new(text: " ") },
+			AccuracyJudgments = new List<JudgmentSegment> { new(15, " + "), new(text: " ") },
+			AfterCutAngleJudgments = new List<JudgmentSegment> { new(30, " + "), new(text: " ") }
 		};
 
 		// If the version number (excluding patch version) of the config is higher than that of the plugin,

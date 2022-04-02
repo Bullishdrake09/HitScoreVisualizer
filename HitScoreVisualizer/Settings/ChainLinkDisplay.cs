@@ -5,6 +5,8 @@ namespace HitScoreVisualizer.Settings
 {
 	public class ChainLinkDisplay
 	{
+		internal static ChainLinkDisplay Default { get; } = new("20", new List<float> { 1f, 1f, 1f, 1f });
+
 		// The text to display (if judgment text is enabled).
 		[JsonProperty("text")]
 		public string Text { get; internal set; }

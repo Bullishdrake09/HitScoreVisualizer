@@ -5,7 +5,7 @@ namespace HitScoreVisualizer.Settings
 	public class TimeDependenceJudgmentSegment
 	{
 		[JsonIgnore]
-		internal static TimeDependenceJudgmentSegment Default { get; } = new() { Threshold = 0, Text = string.Empty };
+		internal static TimeDependenceJudgmentSegment Default { get; } = new(text: string.Empty);
 
 		// This judgment will be applied only when the time dependence >= this number.
 		// If no judgment can be applied, the judgment for this segment will be "" (the empty string).
@@ -15,5 +15,12 @@ namespace HitScoreVisualizer.Settings
 		// The text to replace the appropriate judgment specifier with (%T) when this judgment applies.
 		[JsonProperty("text")]
 		public string? Text { get; internal set; }
+
+		[JsonConstructor]
+		public TimeDependenceJudgmentSegment(float threshold = 0f, string? text = null)
+		{
+			Threshold = threshold;
+			Text = text;
+		}
 	}
 }
