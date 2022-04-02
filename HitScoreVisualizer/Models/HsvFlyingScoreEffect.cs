@@ -46,7 +46,7 @@ namespace HitScoreVisualizer.Models
 				_registeredToCallbacks = true;
 			}
 
-			if (_configuration == null || _noteCutInfo!.Value.noteData.gameplayType is not NoteData.GameplayType.Normal)
+			if (_configuration == null)
 			{
 				_text.text = cutScoreBuffer.cutScore.ToString();
 				_maxCutDistanceScoreIndicator.enabled = cutScoreBuffer.centerDistanceCutScore == cutScoreBuffer.noteScoreDefinition.maxCenterDistanceCutScore;
@@ -72,7 +72,7 @@ namespace HitScoreVisualizer.Models
 
 		public override void HandleCutScoreBufferDidChange(CutScoreBuffer cutScoreBuffer)
 		{
-			if (_configuration == null || _noteCutInfo!.Value.noteData.gameplayType is not NoteData.GameplayType.Normal)
+			if (_configuration == null)
 			{
 				base.HandleCutScoreBufferDidChange(cutScoreBuffer);
 				return;
@@ -86,7 +86,7 @@ namespace HitScoreVisualizer.Models
 
 		public override void HandleCutScoreBufferDidFinish(CutScoreBuffer cutScoreBuffer)
 		{
-			if (_configuration != null && _noteCutInfo!.Value.noteData.gameplayType is NoteData.GameplayType.Normal)
+			if (_configuration != null)
 			{
 				Judge(cutScoreBuffer);
 			}
