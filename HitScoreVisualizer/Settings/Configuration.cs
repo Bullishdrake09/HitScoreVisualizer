@@ -21,12 +21,12 @@ namespace HitScoreVisualizer.Settings
 			TimeDependenceDecimalOffset = 2,
 			Judgments = new List<Judgment>
 			{
-				new(115, "%BFantastic%A%n%s", new List<float> { 1.0f, 1.0f, 1.0f, 1.0f }),
-				new(101, "<size=80%>%BExcellent%A</size>%n%s", new List<float> { 0.0f, 1.0f, 0.0f, 1.0f }),
-				new(90, "<size=80%>%BGreat%A</size>%n%s", new List<float> { 1.0f, 0.980392158f, 0.0f, 1.0f }),
-				new(80, "<size=80%>%BGood%A</size>%n%s", new List<float> { 1.0f, 0.6f, 0.0f, 1.0f }, fade: true),
-				new(60, "<size=80%>%BDecent%A</size>%n%s", new List<float> { 1.0f, 0.0f, 0.0f, 1.0f }, fade: true),
-				new(text: "<size=80%>%BWay Off%A</size>%n%s", color: new List<float> { 0.5f, 0.0f, 0.0f, 1.0f }, fade: true)
+				new(115, "%BFantastic%A%n%s", new List<float> { 1f, 1f, 1f, 1f }),
+				new(101, "<size=80%>%BExcellent%A</size>%n%s", new List<float> { 0f, 1f, 0f, 1f }),
+				new(90, "<size=80%>%BGreat%A</size>%n%s", new List<float> { 1f, 0.980392158f, 0.0f, 1f }),
+				new(80, "<size=80%>%BGood%A</size>%n%s", new List<float> { 1f, 0.6f, 0f, 1f }, fade: true),
+				new(60, "<size=80%>%BDecent%A</size>%n%s", new List<float> { 1f, 0f, 0f, 1f }, fade: true),
+				new(text: "<size=80%>%BWay Off%A</size>%n%s", color: new List<float> { 0.5f, 0f, 0f, 1f }, fade: true)
 			},
 			BeforeCutAngleJudgments = new List<JudgmentSegment> { new(70, " + "), new(text: " ") },
 			AccuracyJudgments = new List<JudgmentSegment> { new(15, " + "), new(text: " ") },
