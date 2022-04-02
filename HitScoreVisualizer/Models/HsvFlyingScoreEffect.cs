@@ -10,8 +10,6 @@ namespace HitScoreVisualizer.Models
 		private JudgmentService _judgmentService = null!;
 		private Configuration? _configuration;
 
-		private NoteCutInfo? _noteCutInfo;
-
 		[Inject]
 		internal void Construct(JudgmentService judgmentService, ConfigProvider configProvider)
 		{
@@ -21,8 +19,6 @@ namespace HitScoreVisualizer.Models
 
 		public override void InitAndPresent(IReadonlyCutScoreBuffer cutScoreBuffer, float duration, Vector3 targetPos, Color color)
 		{
-			_noteCutInfo = cutScoreBuffer.noteCutInfo;
-
 			if (_configuration != null)
 			{
 				if (_configuration.FixedPosition != null)
@@ -94,14 +90,9 @@ namespace HitScoreVisualizer.Models
 			base.HandleCutScoreBufferDidFinish(cutScoreBuffer);
 		}
 
-		private void Judge(CutScoreBuffer cutScoreBuffer, int? assumedAfterCutScore = null)
+		private void Judge(IReadonlyCutScoreBuffer cutScoreBuffer, int? assumedAfterCutScore = null)
 		{
-			var before = cutScoreBuffer.beforeCutScore;
-			var after = assumedAfterCutScore ?? cutScoreBuffer.afterCutScore;
-			var accuracy = cutScoreBuffer.centerDistanceCutScore;
-			var total = before + after + accuracy;
-			var timeDependence = Mathf.Abs(_noteCutInfo!.Value.cutNormal.z);
-			_judgmentService.Judge(cutScoreBuffer.noteScoreDefinition, ref _text, ref _color, total, before, after, accuracy, timeDependence);
+			_judgmentService.Judge(cutScoreBuffer, ref _text, ref _color, assumedAfterCutScore);
 		}
 	}
 }

@@ -150,6 +150,12 @@ namespace HitScoreVisualizer.Settings
 		[JsonProperty("afterCutAngleJudgments")]
 		public List<JudgmentSegment>? AfterCutAngleJudgments { get; internal set; }
 
+		[JsonProperty("chainHeadJudgments")]
+		public List<Judgment>? ChainHeadJudgements { get; internal set; }
+
+		[JsonProperty("chainLinkDisplay")]
+		public ChainLinkDisplay? ChainLinkDisplay { get; internal set; }
+
 		// Judgments for time dependence (score is from 0-1).
 		// Format specifier: %T
 		[JsonProperty("timeDependencyJudgments")]
