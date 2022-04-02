@@ -1,19 +1,16 @@
 <bg xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
 
-	<horizontal pad-top='12'
-				pad-bottom='12'
-				spacing='1'>
-		<vertical spacing='1'>
-			<page-button direction='Up'
-						 event-click='configs-list#PageUp'/>
-
+	<horizontal spacing='1'>
+		<vertical>
 			<custom-list id='configs-list'
 						 pref-width="110"
 						 contents="available-configs"
 						 cell-size="10"
 						 pref-height="55"
-						 select-cell='config-Selected'>
+						 select-cell='config-Selected'
+						 stick-scrolling="true"
+						 show-scrollbar="true">
 				<stack size-delta-x="3">
 					<bg bg="panel-top-gradient" bg-color="#BD288199" tags='hovered' size-delta-x="1"/>
 					<bg bg="panel-top-gradient" bg-color="#fff" tags='selected' size-delta-x="1"/>
@@ -23,9 +20,6 @@
 					</vertical>
 				</stack>
 			</custom-list>
-
-			<page-button direction='Down'
-						 event-click='configs-list#PageDown'/>
 		</vertical>
 
 		<vertical vertical-fit='Unconstrained'
