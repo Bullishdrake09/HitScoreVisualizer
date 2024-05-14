@@ -1,0 +1,9 @@
+{
+    "name": "HitScoreVisualizer",
+    "version": "2.4.4",
+    "description": "A plugin for visualizing hit scores in Beat Saber.",
+    "author": "Your Name",
+    "gameVersion": "1.36.2",
+    "platform": "PC",
+    "dependsOn": []
+}
