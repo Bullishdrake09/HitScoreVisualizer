@@ -1,0 +1,17 @@
+/home/runner/HitScoreVisualizer/HitScoreVisualizer/obj/Debug/net472/HitScoreVisualizer.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/HitScoreVisualizer/HitScoreVisualizer/obj/Debug/net472/HitScoreVisualizer.AssemblyInfoInputs.cache
+/home/runner/HitScoreVisualizer/HitScoreVisualizer/obj/Debug/net472/HitScoreVisualizer.AssemblyInfo.cs
+/home/runner/HitScoreVisualizer/HitScoreVisualizer/obj/Debug/net472/HitScoreVisualizer.csproj.CoreCompileInputs.cache
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.csproj.AssemblyReference.cache
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.AssemblyInfoInputs.cache
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.AssemblyInfo.cs
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.csproj.CoreCompileInputs.cache
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.sourcelink.json
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\bin\Debug\net472\HitScoreVisualizer.dll
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\bin\Debug\net472\HitScoreVisualizer.pdb
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\bin\Debug\net472\Newtonsoft.Json.dll
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\bin\Debug\net472\DataModels.dll
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScore.6C986F27.Up2Date
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.dll
+C:\Users\thoma\Downloads\HitScoreVisualizer\HitScoreVisualizer\obj\Debug\net472\HitScoreVisualizer.pdb
