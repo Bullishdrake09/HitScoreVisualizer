@@ -4,17 +4,18 @@
 	"name": "HitScoreVisualizer",
 	"description": "Visualizes the scores of your hits! Overly complex config options! Numbers? All the pros use it, except the ones who don't. (But they should.)",
 	"author": "Eris",
-	"gameVersion": "1.20.0",
-	"version": "3.3.3",
+	"gameVersion": "1.36.2",
+	"version": "3.4.0",
 	"dependsOn": {
-		"BSIPA": "^4.2.2",
-		"BeatSaberMarkupLanguage": "^1.6.3",
-		"SiraUtil": "^3.0.5"
+		"BSIPA": "^4.3.3",
+		"BeatSaberMarkupLanguage": "^1.11.1",
+		"SiraUtil": "^3.1.7"
 	},
 	"conflictsWith": {
 		"NalulunaFlyingScore": "*"
 	},
 	"links": {
-		"project-source": "https://github.com/ErisApps/HitScoreVisualizer"
+		"original project-source": "https://github.com/ErisApps/HitScoreVisualizer"
+		"project-source": "https://github.com/Bullishdrake09/HitScoreVisualizer"
 	}
 }
