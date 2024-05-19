@@ -31,7 +31,7 @@ namespace HitScoreVisualizer.UI
 
 		protected override void BackButtonWasPressed(ViewController _)
 		{
-			// Dismiss ourselves
+			// Dismiss ourselves (help lmfao)
 			BeatSaberUI.MainFlowCoordinator.DismissFlowCoordinator(this);
 		}
 	}
